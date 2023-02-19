@@ -1,28 +1,70 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Registration Form </title>
-    </head>
-    <body>
-        <div>
-            <form>
-                <h1>Registration Form</h1>
-                <p id="congrats"></p>
-                First Name: <br><input type="text" name="firstname" id="firstname"> <br>
-                Last Name: <br><input type="text" name="lastname" id="lastname"> <br>
-                Nick Name: <br><input type="text" name="nickname" id="nickname"> <br>
-                Email: <br><input type="email" name="email"> <br>
-                Password: <br><input type="password" name="password" id="password"> <br>
-                Date of Birth: <br><input type="date" name="date" id="date"> <br>
-                Gender:<br> 
-                <input type="radio" name="gender" id="male">Male
-                <input type="radio" name="gender" id="female">Female
-                <input type="radio" name="gender" id="other">Other<br>
-                Mobile: <br><input type="text" name="mobile"> <br>
-                Address: <br><textarea cols="30" rows="10"></textarea> <br>
-                <input type="submit" value="Submit" id="submit">
-                <input type="reset" value="Reset" id="reset">
-            </form>
-        </div>
-    </body>
+<head>
+    <title>Javscript</title>
+    <script language="Javscript" type="text/javascript">
+        function toGreen(){
+            document.getElementById("task1").className="green";
+        }
+        function checkAge(){
+            var age = document.myform.age.value;
+            if(age > 65){
+                document.getElementById("isMoreThan65").innerHTML = "True";
+            }
+            else{
+                document.getElementById("isMoreThan65").innerHTML = "False";
+            }
+        }
+        function add(){
+            var x = parseInt(document.calculator.num1.value);
+            var y = parseInt(document.calculator.num2.value);
+            var result = x+y;
+            document.getElementById("result").innerHTML = result;
+        }
+        function subtract(){
+            var x = document.calculator.num1.value;
+            var y = document.calculator.num2.value;
+            var result = x - y;
+            document.getElementById("result").innerHTML = result;
+        }
+        function multiply(){
+            var x = document.calculator.num1.value;
+            var y = document.calculator.num2.value;
+            var result = x * y;
+            document.getElementById("result").innerHTML = result;
+        }
+        function divide(){
+            var x = document.calculator.num1.value;
+            var y = document.calculator.num2.value;
+            var result = x / y;
+            document.getElementById("result").innerHTML = result;
+        }
+
+    </script>
+    <style>
+        .green{
+            color : green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="task1">Task 1</hi><br>
+    <button onclick="toGreen()">Green</button>    
+    <hr>
+    <h1>Task 2</h1>
+    <form name="myform">
+        <input type="number" name="age">
+        <input type="button" value="Check" onclick="checkAge()">
+        <p id="isMoreThan65"></p>
+    </form>
+    <hr>
+    <h1>Task 3</h1>
+    <form name="calculator">
+        <input type = "number" name="num1">
+        <input type = "number" name="num2">
+        <input type = "button" value="Add" onclick="add()">
+        <input type = "button" value="Subtract" onclick="subtract()">
+        <input type = "button" value="Multiply" onclick="multiply()">
+        <input type = "button" value="Divide" onclick="divide()">
+        <p id="result"></p>
+</body>
 </html>
